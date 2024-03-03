@@ -1,5 +1,5 @@
 <script setup>
-import { defineOptions } from 'vue';
+import { defineOptions, computed } from 'vue';
 import defaultLayout from './layouts/default/index.vue'
 import { useRoute } from 'vue-router';
 
@@ -7,12 +7,16 @@ defineOptions({
   components: { defaultLayout }
 })
 
+const route = useRoute()
+
+const layout = computed(() => route.meta.layout || 'div')
+
 </script>
 
 <template>
-  <div class="app">
+  <component :is="layout" class="app">
     <router-view />
-  </div>
+  </component>
 </template>
 
 <style scoped>
