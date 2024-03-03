@@ -7,12 +7,16 @@ defineOptions({
   components: { defaultLayout }
 })
 
+const route = useRoute()
+
+const layout = computed(() => route.meta.layout || 'defaultLayout')
+
 </script>
 
 <template>
-  <div class="app">
+  <component :is="layout" class="app">
     <router-view />
-  </div>
+  </component>
 </template>
 
 <style scoped>
