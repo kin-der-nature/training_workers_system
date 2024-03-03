@@ -1,4 +1,11 @@
 <script setup>
+import { defineOptions } from 'vue';
+import defaultLayout from './layouts/default/index.vue'
+
+defineOptions({
+  components: { defaultLayout }
+})
+
 </script>
 
 <template>
