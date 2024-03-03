@@ -15,7 +15,9 @@ const layout = computed(() => route.meta.layout || 'div')
 
 <template>
   <component :is="layout" class="app">
+  <component :is="layout" class="app">
     <router-view />
+  </component>
   </component>
 </template>
 
