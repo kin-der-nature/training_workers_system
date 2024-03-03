@@ -1,7 +1,7 @@
 <template>
   <div class="auth_form">
-    <el-input v-model="model.name" placeholder="Введите логин" />
-    <el-input v-model="model.password" type="password" placeholder="Введите пароль" />
+    <el-input size="large" v-model="model.name" placeholder="Введите логин" />
+    <el-input size="large" v-model="model.password" type="password" placeholder="Введите пароль" show-password />
   </div>
 </template>
 
