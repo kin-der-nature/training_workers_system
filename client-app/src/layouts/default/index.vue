@@ -11,11 +11,14 @@
         Статистика
       </el-menu-item>
     </el-menu>
-    <div class="default_layout_content__block">
+    <main class="default_layout_content__block">
       <el-card class="default_layout_card_content" shadow="always">
+        <div class="default_layout_card_content_title__block">
+          <h1>{{ $route.meta.title }}</h1>
+        </div>
         <slot />
       </el-card>
-    </div>
+    </main>
   </div>
 </template>
 
