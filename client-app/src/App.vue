@@ -1,6 +1,7 @@
 <script setup>
 import { defineOptions } from 'vue';
 import defaultLayout from './layouts/default/index.vue'
+import { useRoute } from 'vue-router';
 
 defineOptions({
   components: { defaultLayout }
