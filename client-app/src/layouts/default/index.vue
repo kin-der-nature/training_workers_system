@@ -11,11 +11,16 @@
         Статистика
       </el-menu-item>
     </el-menu>
+    <div class="default_layout_content__block">
+      <el-card class="default_layout_card_content" shadow="always">
+        <slot />
+      </el-card>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ElMenu, ElMenuItem } from 'element-plus'
+import { ElMenu, ElMenuItem, ElCard } from 'element-plus'
 </script>
 
 <style scoped>
@@ -28,5 +33,13 @@ import { ElMenu, ElMenuItem } from 'element-plus'
   width: 100%;
   height: 100%;
   padding: 20px 0;
+}
+.default_layout_content__block {
+  width: 100%;
+  padding: 20px;
+}
+.default_layout_card_content {
+  width: 100%;
+  height: 100%;
 }
 </style>
