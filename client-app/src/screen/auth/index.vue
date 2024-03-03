@@ -11,7 +11,7 @@ const usersAuth = reactive({})
   <div class="auth_screen">
     <el-card class="auth_card">
       <div class="auth_title__block">
-        <h1>Войти</h1>
+        <h1>Авторизация</h1>
       </div>
       <auth-form class="auth_form" v-model="usersAuth" />
       <div class="auth_button__block">
