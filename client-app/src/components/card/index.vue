@@ -7,7 +7,7 @@
     </slot>
     <div class="title_container">
       <slot name="title">
-        <h1 class="title">Example</h1>
+        <h1 class="title">{{ title }}</h1>
       </slot>
     </div>
   </el-card>
@@ -19,6 +19,9 @@ import { ElCard } from 'element-plus';
 const props = defineProps({
   previewImage: {
     type: Object
+  },
+  title: {
+    type: String
   }
 })
 </script>
