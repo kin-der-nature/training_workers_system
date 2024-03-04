@@ -26,7 +26,7 @@ const props = defineProps({
 .preview-image {
   width: 100%;
   height: 100%;
-  max-height: 100px;
+  max-height: 150px;
   object-fit: contain;
 }
 </style>
