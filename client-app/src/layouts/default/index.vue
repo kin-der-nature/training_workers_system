@@ -12,7 +12,7 @@
       </el-menu-item>
     </el-menu>
     <main class="default_layout_content__block">
-      <el-card class="default_layout_card_content" shadow="always">
+      <el-card class="default_layout_card_content" body-class="default_layout_card_body" shadow="always">
         <div class="default_layout_card_content_title__block">
           <h1>{{ $route.meta.title }}</h1>
         </div>
@@ -28,7 +28,7 @@
 import { ElMenu, ElMenuItem, ElCard } from 'element-plus'
 </script>
 
-<style scoped>
+<style>
 .default_layout {
   display: flex;
   height: 100%;
@@ -49,5 +49,10 @@ import { ElMenu, ElMenuItem, ElCard } from 'element-plus'
 }
 .default_layout_card_content_container {
   margin: 40px 0;
+}
+.default_layout_card_body {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - var(--el-card-padding));
 }
 </style>
