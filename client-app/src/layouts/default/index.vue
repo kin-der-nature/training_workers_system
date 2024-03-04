@@ -16,7 +16,9 @@
         <div class="default_layout_card_content_title__block">
           <h1>{{ $route.meta.title }}</h1>
         </div>
-        <slot />
+        <div class="default_layout_card_content_container">
+          <slot />
+        </div>
       </el-card>
     </main>
   </div>
@@ -44,5 +46,8 @@ import { ElMenu, ElMenuItem, ElCard } from 'element-plus'
 .default_layout_card_content {
   width: 100%;
   height: 100%;
+}
+.default_layout_card_content_container {
+  margin: 40px 0;
 }
 </style>
