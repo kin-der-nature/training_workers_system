@@ -2,12 +2,19 @@
   <el-card class="default_card">
     <slot name="preview-image">
       <div class="preview_image_container">
-        <img class="preview-image":src="previewImage.src" :alt="previewImage.alt">
+        <img class="preview-image" :src="previewImage.src" :alt="previewImage.alt">
       </div>
     </slot>
     <div class="title_container">
       <slot name="title">
         <h1 class="title">{{ title }}</h1>
+      </slot>
+    </div>
+    <div class="description_container">
+      <slot name="description">
+        <span class="description">
+          Example
+        </span>
       </slot>
     </div>
   </el-card>
@@ -42,6 +49,13 @@ const props = defineProps({
   width: 100%;
 }
 .title {
+  word-break: break-all;
+}
+
+.description_container {
+  width: 100%;
+  height: 100%;
+  margin: 30px 0;
   word-break: break-all;
 }
 </style>
