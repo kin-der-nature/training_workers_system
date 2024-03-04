@@ -5,6 +5,11 @@
         <img class="preview-image":src="previewImage.src" :alt="previewImage.alt">
       </div>
     </slot>
+    <div class="title_container">
+      <slot name="title">
+        <h1 class="title">Example</h1>
+      </slot>
+    </div>
   </el-card>
 </template>
 
@@ -28,5 +33,12 @@ const props = defineProps({
   height: 100%;
   max-height: 150px;
   object-fit: contain;
+}
+.title_container {
+  margin: 30px 0;
+  width: 100%;
+}
+.title {
+  word-break: break-all;
 }
 </style>
