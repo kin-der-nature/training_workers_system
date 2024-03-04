@@ -10,6 +10,15 @@ const routes = [
     name: 'Home',
     path: '/home',
     component: import('../screen/home/index.vue')
+  },
+  {
+    name: 'courses',
+    path: '/courses',
+    meta: {
+      title: 'Мои курсы',
+      layout: 'defaultLayout'
+    },
+    component: () => import('../screen/courses/index.vue')
   }
 ]
 
