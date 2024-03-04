@@ -13,7 +13,7 @@
     <div class="description_container">
       <slot name="description">
         <span class="description">
-          Example
+          {{ description }}
         </span>
       </slot>
     </div>
@@ -28,6 +28,9 @@ const props = defineProps({
     type: Object
   },
   title: {
+    type: String
+  },
+  description: {
     type: String
   }
 })
