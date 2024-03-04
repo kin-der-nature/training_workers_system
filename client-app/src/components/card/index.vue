@@ -23,4 +23,10 @@ const props = defineProps({
   width: 100%;
   height: 100%;
 }
+.preview-image {
+  width: 100%;
+  height: 100%;
+  max-height: 100px;
+  object-fit: contain;
+}
 </style>
