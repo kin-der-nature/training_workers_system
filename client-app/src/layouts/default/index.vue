@@ -16,16 +16,16 @@
         <div class="default_layout_card_content_title__block">
           <h1>{{ $route.meta.title }}</h1>
         </div>
-        <div class="default_layout_card_content_container">
+        <el-scrollbar class="default_layout_card_content_container">
           <slot />
-        </div>
+        </el-scrollbar>
       </el-card>
     </main>
   </div>
 </template>
 
 <script setup>
-import { ElMenu, ElMenuItem, ElCard } from 'element-plus'
+import { ElMenu, ElMenuItem, ElScrollbar, ElCard } from 'element-plus'
 </script>
 
 <style>
