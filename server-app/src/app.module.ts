@@ -6,6 +6,7 @@ import { User } from './users/user.model';
 import { RolesModule } from './roles/roles.module';
 import { Roles } from './roles/roles.model';
 import { UserRolesModule } from './user_roles/user_roles.module';
+import { UserRoles } from './user_roles/user_roles.model';
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import { UserRolesModule } from './user_roles/user_roles.module';
       username: 'postgres',
       password: '12345',
       database: 'training_workers',
-      models: [User, Roles],
+      models: [User, Roles, UserRoles],
       autoLoadModels: true,
     }),
     UsersModule,
