@@ -10,8 +10,8 @@ export class RolesService {
     private rolesRepository: typeof Roles,
   ) {}
 
-  getAllRoles() {
-    const roles = this.rolesRepository.findAll();
+  async getAllRoles() {
+    const roles = await this.rolesRepository.findAll();
 
     return roles;
   }
