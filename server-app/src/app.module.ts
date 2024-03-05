@@ -5,8 +5,10 @@ import { UsersModule } from './users/users.module';
 import { User } from './users/user.model';
 import { RolesModule } from './roles/roles.module';
 import { Roles } from './roles/roles.model';
-import { UserRolesModule } from './user_roles/user_roles.module';
-import { UserRoles } from './user_roles/user_roles.model';
+import { UserRoles } from './roles/user_roles.model';
+import { AuthService } from './auth/auth.service';
+import { AuthController } from './auth/auth.controller';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -25,9 +27,9 @@ import { UserRoles } from './user_roles/user_roles.model';
     }),
     UsersModule,
     RolesModule,
-    UserRolesModule,
+    AuthModule,
   ],
-  controllers: [],
-  providers: [],
+  controllers: [AuthController],
+  providers: [AuthService],
 })
 export class AppModule {}
