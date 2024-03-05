@@ -6,7 +6,7 @@ import {
   Table,
 } from 'sequelize-typescript';
 import { Roles } from 'src/roles/roles.model';
-import { UserRoles } from 'src/user_roles/user_roles.model';
+import { UserRoles } from 'src/roles/user_roles.model';
 
 interface UserCreateDto {
   login: string;
