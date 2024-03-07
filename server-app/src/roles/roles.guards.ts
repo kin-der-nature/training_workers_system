@@ -3,7 +3,8 @@ import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { Roles } from './roles.model';
 import { User } from 'src/users/user.model';
-import { notAuth, tokenNoDecode } from 'src/users/utils/message';
+import { notAuth } from 'src/users/utils/message';
+import { tokenNoDecode } from 'src/utils/message';
 
 @Injectable()
 export class RolesGuards implements CanActivate {
