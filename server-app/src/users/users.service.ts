@@ -3,6 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { User } from './user.model';
 import { createUserDto } from './dto/create_user.dto';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class UsersService {
@@ -10,6 +11,7 @@ export class UsersService {
     @InjectModel(User)
     private userRepository: typeof User,
     private roleService: RolesService,
+    private jwtService: JwtService,
   ) {}
 
   async createUser(dto: createUserDto) {
@@ -44,5 +46,16 @@ export class UsersService {
     });
 
     return currentUser;
+  }
+
+  async getUserByToken(dto: string): Promise<User | undefined> {
+    try {
+      const { id: userId } = await this.jwtService.verify(dto);
+      const currentUser: User = await this.getUserById(userId);
+
+      return currentUser;
+    } catch {
+      return undefined;
+    }
   }
 }
