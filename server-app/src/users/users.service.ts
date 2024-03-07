@@ -36,4 +36,13 @@ export class UsersService {
 
     return currentUser;
   }
+
+  async getUserById(id: number) {
+    const currentUser = this.userRepository.findOne({
+      where: { id },
+      include: { all: true },
+    });
+
+    return currentUser;
+  }
 }
