@@ -3,10 +3,8 @@ import { createUserDto } from '../users/dto/create_user.dto';
 import { UsersService } from '../users/users.service';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcryptjs';
-import {
-  incorrectAuthorizationData,
-  loginExistsSystem,
-} from 'src/users/utils/message';
+import { loginExistsSystem } from 'src/users/utils/message';
+import { incorrectAuthorizationData } from 'src/auth/utils';
 
 @Injectable()
 export class AuthService {
