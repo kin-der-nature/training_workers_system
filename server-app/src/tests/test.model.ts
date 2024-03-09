@@ -1,6 +1,7 @@
-import { Model } from 'sequelize';
-import { Column, DataType } from 'sequelize-typescript';
+// import { createTestDto } from './dto/index.dto';
+import { Model, Column, DataType, Table } from 'sequelize-typescript';
 
+@Table({ tableName: 'tests' })
 export class Test extends Model<Test> {
   @Column({
     type: DataType.INTEGER,
@@ -11,7 +12,7 @@ export class Test extends Model<Test> {
   id: number;
 
   @Column({
-    type: DataType.STRING(50),
+    type: DataType.STRING,
     allowNull: false,
   })
   name: string;
