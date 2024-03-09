@@ -3,7 +3,7 @@ import { ElCard, ElButton } from 'element-plus';
 import authForm from '../../components/forms/auth/index.vue';
 import { reactive } from 'vue';
 
-const usersAuth = reactive({})
+const authParams = reactive({})
 
 </script>
 
@@ -13,7 +13,7 @@ const usersAuth = reactive({})
       <div class="auth_title__block">
         <h1>Авторизация</h1>
       </div>
-      <auth-form class="auth_form" v-model="usersAuth" />
+      <auth-form class="auth_form" v-model="authParams" />
       <div class="auth_button__block">
         <el-button type="primary" size="large">
           Войти
