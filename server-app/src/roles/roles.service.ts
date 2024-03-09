@@ -18,7 +18,7 @@ export class RolesService {
 
   async getRoleByName(value: string) {
     const currentRole = await this.rolesRepository.findOne({
-      where: { value },
+      where: { name: value },
     });
 
     return currentRole;
