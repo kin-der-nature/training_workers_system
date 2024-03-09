@@ -15,10 +15,16 @@ export const useUserStore = defineStore('user', () => {
     token.value = v;
   }
 
+  const resetToken = () => {
+    localStorage.removeItem('token');
+    token.value = null;
+  }
+
   return {
     user,
     token,
     setUserState,
+    resetToken,
     setToken,
   }
 })
