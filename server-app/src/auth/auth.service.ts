@@ -40,6 +40,11 @@ export class AuthService {
 
   private async validateUser(userDto: createUserDto) {
     const user = await this.userService.getUserByLogin(userDto.login);
+
+    if (!user) {
+      loginExistsSystem();
+    }
+
     const passwordEquals = await bcrypt.compare(
       userDto.password,
       user.password,
