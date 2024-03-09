@@ -10,9 +10,15 @@ export const useUserStore = defineStore('user', () => {
     user.value = v;
   }
 
+  const setToken = (v) => {
+    localStorage.setItem('token', v);
+    token.value = v;
+  }
+
   return {
     user,
     token,
-    setUserState
+    setUserState,
+    setToken,
   }
 })
