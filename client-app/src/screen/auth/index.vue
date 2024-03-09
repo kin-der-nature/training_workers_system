@@ -1,9 +1,9 @@
 <script setup>
 import { ElCard, ElButton } from 'element-plus';
 import authForm from '../../components/forms/auth/index.vue';
-import { reactive } from 'vue';
+import { useAuth } from '../../composables/auth';
 
-const authParams = reactive({})
+const { authParams } = useAuth();
 
 </script>
 
