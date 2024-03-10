@@ -10,3 +10,10 @@ export const loginExistsSystem = (): void => {
     HttpStatus.BAD_REQUEST,
   );
 };
+
+export const userWithByCurrentParamsNotFound = (): void => {
+  throw new HttpException(
+    'Пользователь с такими параметрами не найден',
+    HttpStatus.NOT_FOUND,
+  );
+};
