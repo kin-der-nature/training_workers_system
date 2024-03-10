@@ -1,16 +1,16 @@
 <script setup>
 import { defineOptions, computed } from 'vue';
-import defaultLayout from './layouts/default/index.vue'
+import defaultLayout from './layouts/default/index.vue';
+import emptyLayout from './layouts/empty/index.vue'
 import { useRoute } from 'vue-router';
 
 defineOptions({
-  components: { defaultLayout }
+  components: { defaultLayout, emptyLayout }
 })
 
 const route = useRoute()
 
-const layout = computed(() => route.meta.layout || 'div')
-
+const layout = computed(() => route.meta.layout || 'defaultLayout')
 </script>
 
 <template>
