@@ -8,3 +8,11 @@ export const getTokenByAuthParamsRequest = (dto) => {
 
   return httpInctance.post('auth/login', params)
 }
+
+export const getUserByTokenRequest = (token) => {
+  const params = {
+    token: token
+  }
+
+  return httpInctance.get('users/get_by_token/', { params });
+}
