@@ -3,7 +3,7 @@ import { ElCard, ElButton } from 'element-plus';
 import authForm from '../../components/forms/auth/index.vue';
 import { useAuth } from '../../composables/auth';
 
-const { authParams } = useAuth();
+const { authParams, authByParams } = useAuth();
 
 </script>
 
@@ -15,7 +15,7 @@ const { authParams } = useAuth();
       </div>
       <auth-form class="auth_form" v-model="authParams" />
       <div class="auth_button__block">
-        <el-button type="primary" size="large">
+        <el-button @click="authByParams(authParams)" type="primary" size="large">
           Войти
         </el-button>
       </div>
