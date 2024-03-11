@@ -4,6 +4,9 @@ const routes = [
   {
     name: 'auth',
     path: '/',
+    meta: {
+      layout: 'empty'
+    },
     component: import('../screen/auth/index.vue')
   },
   {
