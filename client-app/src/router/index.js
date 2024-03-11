@@ -12,6 +12,9 @@ const routes = [
   {
     name: 'Home',
     path: '/home',
+    meta: {
+      roles: []
+    },
     component: import('../screen/home/index.vue')
   },
   {
