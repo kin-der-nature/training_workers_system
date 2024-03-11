@@ -13,6 +13,7 @@ import { RolesGuards } from './roles/roles.guards';
 import { APP_GUARD } from '@nestjs/core';
 import { TestModule } from './tests/test.module';
 import { Test } from './tests/test.model';
+import { TestQuentions } from './tests/test-quentions.model';
 import { QuestionsModule } from './questions/questions.module';
 import { Questions } from './questions/questions.model';
 import { Questions_variant } from './questions/variants.model';
@@ -30,7 +31,15 @@ import { ThemeModule } from './theme/theme.module';
       username: process.env.POSTGRES_USERNAME,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DATABASE_NAME,
-      models: [User, Roles, UserRoles, Test, Questions, Questions_variant],
+      models: [
+        User,
+        Roles,
+        UserRoles,
+        Test,
+        Questions,
+        Questions_variant,
+        TestQuentions,
+      ],
       autoLoadModels: true,
     }),
     UsersModule,

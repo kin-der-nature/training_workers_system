@@ -10,6 +10,14 @@ export class TestService {
     private testRepository: typeof Test,
   ) {}
 
+  async getTestsAll(): Promise<Test[] | undefined> {
+    const result = await this.testRepository.findAll({
+      include: { all: true },
+    });
+
+    return result;
+  }
+
   createTest(dto: createTestDto) {
     const result = this.testRepository.create(dto);
 
