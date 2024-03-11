@@ -15,8 +15,7 @@ const routes = [
     name: 'courses',
     path: '/courses',
     meta: {
-      title: 'Мои курсы',
-      layout: 'defaultLayout'
+      title: 'Мои курсы'
     },
     component: () => import('../screen/courses/index.vue')
   }
