@@ -16,6 +16,7 @@ import { Test } from './tests/test.model';
 import { QuestionsModule } from './questions/questions.module';
 import { Questions } from './questions/questions.model';
 import { Questions_variant } from './questions/variants.model';
+import { ThemeModule } from './theme/theme.module';
 
 @Module({
   imports: [
@@ -37,6 +38,7 @@ import { Questions_variant } from './questions/variants.model';
     AuthModule,
     TestModule,
     QuestionsModule,
+    ThemeModule,
   ],
   controllers: [AuthController],
   providers: [AuthService, { provide: APP_GUARD, useClass: RolesGuards }],
