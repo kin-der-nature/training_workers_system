@@ -21,7 +21,8 @@ const routes = [
     name: 'courses',
     path: '/courses',
     meta: {
-      title: 'Мои курсы'
+      title: 'Мои курсы',
+      roles: []
     },
     component: () => import('../screen/courses/index.vue')
   }
