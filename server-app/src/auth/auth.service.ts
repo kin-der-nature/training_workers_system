@@ -42,7 +42,7 @@ export class AuthService {
     const user = await this.userService.getUserByLogin(userDto.login);
 
     if (!user) {
-      loginExistsSystem();
+      incorrectAuthorizationData();
     }
 
     const passwordEquals = await bcrypt.compare(
