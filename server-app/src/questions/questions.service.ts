@@ -9,7 +9,7 @@ export class QuestionsService {
     private questionsRepository: typeof Questions,
   ) {}
 
-  async getAllQuestion() {
+  async getAllQuestions() {
     const result = await this.questionsRepository.findAll({
       include: { all: true },
     });
