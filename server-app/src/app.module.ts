@@ -14,6 +14,7 @@ import { APP_GUARD } from '@nestjs/core';
 import { TestModule } from './tests/test.module';
 import { Test } from './tests/test.model';
 import { QuestionsModule } from './questions/questions.module';
+import { Questions } from './questions/questions.model';
 
 @Module({
   imports: [
@@ -27,7 +28,7 @@ import { QuestionsModule } from './questions/questions.module';
       username: process.env.POSTGRES_USERNAME,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DATABASE_NAME,
-      models: [User, Roles, UserRoles, Test],
+      models: [User, Roles, UserRoles, Test, Questions],
       autoLoadModels: true,
     }),
     UsersModule,
