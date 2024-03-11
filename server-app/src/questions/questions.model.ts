@@ -1,7 +1,8 @@
 import { Column, DataType, Model, Table } from 'sequelize-typescript';
+import { createQuestion } from './dto/index.dto';
 
 @Table({ tableName: 'questions' })
-export class Questions extends Model<Questions> {
+export class Questions extends Model<Questions, createQuestion> {
   @Column({
     type: DataType.INTEGER,
     unique: true,
