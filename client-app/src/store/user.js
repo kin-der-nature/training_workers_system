@@ -1,8 +1,9 @@
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
+import { getUserByTokenRequest } from "../api/user";
 
 export const useUserStore = defineStore('user', () => {
-  const user = ref(null);
+  let user = ref(null);
 
   const token = ref(localStorage.getItem('token'));
 
@@ -22,6 +23,12 @@ export const useUserStore = defineStore('user', () => {
     token.value = null;
   }
 
+  const getByToken = async () => {
+    const { data } = await getUserByTokenRequest(token.value);
+
+    user.value = data;
+  }
+
   return {
     user,
     token,
@@ -29,5 +36,6 @@ export const useUserStore = defineStore('user', () => {
     resetToken,
     setToken,
     isAuth,
+    getByToken,
   }
 })
