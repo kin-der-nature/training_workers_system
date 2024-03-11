@@ -13,6 +13,7 @@ import { RolesGuards } from './roles/roles.guards';
 import { APP_GUARD } from '@nestjs/core';
 import { TestModule } from './tests/test.module';
 import { Test } from './tests/test.model';
+import { QuestionsModule } from './questions/questions.module';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { Test } from './tests/test.model';
     RolesModule,
     AuthModule,
     TestModule,
+    QuestionsModule,
   ],
   controllers: [AuthController],
   providers: [AuthService, { provide: APP_GUARD, useClass: RolesGuards }],
