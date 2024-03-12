@@ -1,5 +1,12 @@
-// import { createTestDto } from './dto/index.dto';
-import { Model, Column, DataType, Table } from 'sequelize-typescript';
+import { Questions } from './../questions/questions.model';
+import {
+  Model,
+  Column,
+  DataType,
+  Table,
+  BelongsToMany,
+} from 'sequelize-typescript';
+import { TestQuentions } from './test-quentions.model';
 
 @Table({ tableName: 'tests' })
 export class Test extends Model<Test> {
@@ -16,4 +23,7 @@ export class Test extends Model<Test> {
     allowNull: false,
   })
   name: string;
+
+  @BelongsToMany(() => Questions, () => TestQuentions)
+  questions: Questions[];
 }
