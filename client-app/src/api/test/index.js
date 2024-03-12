@@ -1,8 +1,5 @@
-import { data } from "../../data/tests"
-import { fakeDelay } from '../../helpers/Promise/index.js'
+import { httpInctance } from ".."
 
-export const getTestsRequest = (delay) => {
-  return fakeDelay(() => {
-    return data
-  }, delay)
+export const getTestsRequest = () => {
+  return httpInctance.get('tests/');
 }
