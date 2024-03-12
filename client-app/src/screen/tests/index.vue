@@ -1,12 +1,18 @@
 <template>
   <div class="tests-screen">
     <div class="tests-list-container">
+
     </div>
   </div>
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
+import { useTests } from '../../composables/tests';
 
+const { tests, getTests } = useTests()
+
+onMounted(() => getTests())
 </script>
 
 <style scoped>
