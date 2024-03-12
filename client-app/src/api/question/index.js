@@ -1,5 +1,5 @@
 import { httpInctance } from ".."
 
-export const getQuestion = () => {
+export const getQuestionRequest = () => {
   return httpInctance.get('questions/')
 }
