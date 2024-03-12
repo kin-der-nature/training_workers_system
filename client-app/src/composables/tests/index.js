@@ -1,8 +1,13 @@
 import { reactive } from "vue"
-import { getTestsRequest } from "../../api/test";
 
 export const useTests = () => {
+  const tests = reactive({
+    value: null,
+    loading: false
+  });
+
 
   return {
+    tests
   }
 }
