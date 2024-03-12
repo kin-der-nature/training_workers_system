@@ -26,6 +26,15 @@ const routes = [
       roles: []
     },
     component: () => import('../screen/courses/index.vue')
+  },
+  {
+    name: 'tests',
+    path: '/tests',
+    meta: {
+      title: 'Тесты',
+      roles: []
+    },
+    component: () => import('../screen/tests/index.vue')
   }
 ]
 
