@@ -1,4 +1,5 @@
 import { reactive } from "vue"
+import { getTestsRequest } from "../../api/test";
 
 export const useTests = () => {
   const tests = reactive({
@@ -10,8 +11,16 @@ export const useTests = () => {
     tests.value = v
   }
 
+  const getTests = async () => {
+    tests.loading = true
+    const { data } = await getTestsRequest();
+    setTestsValue(data);
+    tests.loading = false
+  }
+
   return {
     tests,
-    setTestsValue
+    setTestsValue,
+    getTests
   }
 }
