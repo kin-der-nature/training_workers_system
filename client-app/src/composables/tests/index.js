@@ -6,8 +6,12 @@ export const useTests = () => {
     loading: false
   });
 
+  const setTestsValue = (v) => {
+    tests.value = v
+  }
 
   return {
-    tests
+    tests,
+    setTestsValue
   }
 }
