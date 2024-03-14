@@ -27,9 +27,9 @@ export class TestService {
   async createTest(dto: createTestDto) {
     const test = await this.testRepository.create({ name: dto.name });
     await this.TestQuentionsRepository.bulkCreate(
-      dto.questions.map((item) => ({
+      dto.questions.map((id) => ({
         test_id: test.id,
-        quentions_id: item.id,
+        quentions_id: id,
       })),
     );
     return test;
