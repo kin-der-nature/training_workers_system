@@ -15,4 +15,9 @@ export class TestController {
   create(@Body() dto: createTestDto) {
     return this.testService.createTest(dto);
   }
+
+  @Post('take_test/')
+  take_test(@Body() dto: any) {
+    return this.testService.takeTest(dto);
+  }
 }
