@@ -18,7 +18,25 @@ export class TestService {
 
   async getTestsAll(): Promise<Test[] | undefined> {
     const result = await this.testRepository.findAll({
-      include: { all: true },
+      include: [
+        {
+          model: Questions,
+          all: true,
+          nested: true,
+          include: [
+            {
+              model: Questions_variant,
+              attributes: ['id', 'name'],
+            },
+          ],
+          attributes: ['id', 'name'],
+          through: {
+            attributes: [],
+          },
+        },
+      ],
+
+      attributes: ['id', 'name'],
     });
 
     return result;
