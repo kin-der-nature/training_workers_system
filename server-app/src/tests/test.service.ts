@@ -3,9 +3,8 @@ import { TestQuentions } from './test-quentions.model';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Test } from './test.model';
-import { Questions } from 'src/questions/questions.model';
-import { Questions_variant } from 'src/questions/variants.model';
 import { createTestDto } from './dto/index.dto';
+import { test as testSchema } from './schema/';
 
 @Injectable()
 export class TestService {
@@ -18,23 +17,7 @@ export class TestService {
 
   async getTestsAll(): Promise<Test[] | undefined> {
     const result = await this.testRepository.findAll({
-      include: [
-        {
-          model: Questions,
-          all: true,
-          nested: true,
-          include: [
-            {
-              model: Questions_variant,
-              attributes: ['id', 'name'],
-            },
-          ],
-          attributes: ['id', 'name'],
-          through: {
-            attributes: [],
-          },
-        },
-      ],
+      include: [testSchema],
 
       attributes: ['id', 'name'],
     });
@@ -48,22 +31,7 @@ export class TestService {
         id: v,
       },
       attributes: ['id', 'name'],
-      include: [
-        {
-          model: Questions,
-          nested: true,
-          include: [
-            {
-              model: Questions_variant,
-              attributes: ['id', 'name'],
-            },
-          ],
-          attributes: ['id', 'name'],
-          through: {
-            attributes: [],
-          },
-        },
-      ],
+      include: [testSchema],
     });
 
     return result;
