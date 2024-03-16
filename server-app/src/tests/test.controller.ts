@@ -20,7 +20,7 @@ export class TestController {
   }
 
   @Get('one/')
-  async getById(@Query('id') id: any) {
+  async getById(@Query('id') id: number) {
     const response = await this.testService.getTestById(id);
 
     if (!response) {
