@@ -42,6 +42,33 @@ export class TestService {
     return result;
   }
 
+  async getTestById(v: number) {
+    const result = await this.testRepository.findOne({
+      where: {
+        id: v,
+      },
+      attributes: ['id', 'name'],
+      include: [
+        {
+          model: Questions,
+          nested: true,
+          include: [
+            {
+              model: Questions_variant,
+              attributes: ['id', 'name'],
+            },
+          ],
+          attributes: ['id', 'name'],
+          through: {
+            attributes: [],
+          },
+        },
+      ],
+    });
+
+    return result;
+  }
+
   async createTest(dto: createTestDto) {
     const test = await this.testRepository.create({ name: dto.name });
     await this.TestQuentionsRepository.bulkCreate(
