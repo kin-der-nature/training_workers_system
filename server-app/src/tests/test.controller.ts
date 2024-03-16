@@ -1,5 +1,5 @@
 import { TestService } from 'src/tests/test.service';
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { createTestDto } from './dto/index.dto';
 
 @Controller('tests')
@@ -9,6 +9,12 @@ export class TestController {
   @Get()
   getAll() {
     return this.testService.getTestsAll();
+  }
+
+  @Get('get_one/')
+  getById(@Query('id') id: any) {
+    console.log('param id', id);
+    return this.testService.getTestById(id);
   }
 
   @Post()
