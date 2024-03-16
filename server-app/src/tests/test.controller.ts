@@ -1,5 +1,13 @@
 import { TestService } from 'src/tests/test.service';
-import { Body, Controller, Get, Post, Query } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpException,
+  HttpStatus,
+  Post,
+  Query,
+} from '@nestjs/common';
 import { createTestDto } from './dto/index.dto';
 
 @Controller('tests')
@@ -11,10 +19,18 @@ export class TestController {
     return this.testService.getTestsAll();
   }
 
-  @Get('get_one/')
-  getById(@Query('id') id: any) {
-    console.log('param id', id);
-    return this.testService.getTestById(id);
+  @Get('one/')
+  async getById(@Query('id') id: any) {
+    const response = await this.testService.getTestById(id);
+
+    if (!response) {
+      throw new HttpException(
+        `test with id: ${id} not found`,
+        HttpStatus.NOT_FOUND,
+      );
+    }
+
+    return response;
   }
 
   @Post()
@@ -24,6 +40,6 @@ export class TestController {
 
   @Post('take_test/')
   take_test(@Body() dto: any) {
-    return this.testService.takeTest(dto);
+    // return this.testService.takeTest(dto);
   }
 }
