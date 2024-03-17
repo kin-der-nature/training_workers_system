@@ -3,8 +3,10 @@ import { TestQuentions } from './test-quentions.model';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Test } from './test.model';
-import { createTestDto } from './dto/index.dto';
+import { createTestDto, responsesOfTest } from './dto/index.dto';
 import { test as testSchema } from './schema/';
+import { Questions } from 'src/questions/questions.model';
+import { Questions_variant } from 'src/questions/variants.model';
 
 @Injectable()
 export class TestService {
@@ -35,6 +37,32 @@ export class TestService {
     });
 
     return result;
+  }
+
+  async getResponsesOfTestById(v: number) {
+    const currentTest = await this.testRepository.findOne({
+      where: {
+        id: v,
+      },
+      include: [
+        {
+          model: Questions,
+          attributes: ['id'],
+          include: [
+            {
+              model: Questions_variant,
+              attributes: ['id', 'counte'],
+            },
+          ],
+          through: {
+            attributes: [],
+          },
+        },
+      ],
+      attributes: ['id'],
+    });
+
+    return currentTest;
   }
 
   async createTest(dto: createTestDto) {
