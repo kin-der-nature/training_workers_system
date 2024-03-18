@@ -14,3 +14,7 @@ export type variant = {
   counte: number;
 };
 
+export type responsesToQuestion = {
+  id: number;
+  variants: variant[];
+};
