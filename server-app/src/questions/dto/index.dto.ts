@@ -7,3 +7,10 @@ export type createVariant = {
   name: string;
   count: number;
 };
+
+export type variant = {
+  id: number;
+  name: string;
+  counte: number;
+};
+
