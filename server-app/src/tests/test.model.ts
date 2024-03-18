@@ -7,6 +7,8 @@ import {
   BelongsToMany,
 } from 'sequelize-typescript';
 import { TestQuentions } from './test-quentions.model';
+import { getSumNumbers } from 'src/helpers/numbers';
+import { Questions_variant } from 'src/questions/variants.model';
 
 @Table({ tableName: 'tests' })
 export class Test extends Model<Test> {
@@ -23,6 +25,25 @@ export class Test extends Model<Test> {
     allowNull: false,
   })
   name: string;
+
+  @Column({
+    type: DataType.VIRTUAL,
+    get(): number {
+      const questions: Questions[] = this.getDataValue('questions');
+
+      const allVariantsQuestions: Questions_variant[] = questions.reduce(
+        (acc, item) => (acc = [...acc, ...item.variants]),
+        [],
+      );
+
+      const allScoreVariants: number[] = allVariantsQuestions.map(
+        (item) => item.counte,
+      );
+
+      return getSumNumbers(allScoreVariants);
+    },
+  })
+  allScore: number;
 
   @BelongsToMany(() => Questions, () => TestQuentions)
   questions: Questions[];
