@@ -1,5 +1,6 @@
 export class createQuestion {
   name: string;
+  variants: createVariant[];
 }
 
 export type createVariant = {
