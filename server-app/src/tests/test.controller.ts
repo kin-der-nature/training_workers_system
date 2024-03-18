@@ -40,6 +40,6 @@ export class TestController {
 
   @Post('take_test/')
   take_test(@Body() dto: any) {
-    // return this.testService.takeTest(dto);
+    return this.testService.takeTest(dto);
   }
 }
