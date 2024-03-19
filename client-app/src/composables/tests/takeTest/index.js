@@ -8,6 +8,8 @@ export const useTakeTest = () => {
     value: null
   })
 
+  const currentQuestionIndex = ref(0);
+
   const getTestById = async (id) => {
     test.loaging = true;
     const { data } = await getTestByIdRequest(id)
@@ -17,6 +19,7 @@ export const useTakeTest = () => {
 
   return {
     test,
+    currentQuestionIndex,
     getTestById
   }
 }
