@@ -38,6 +38,14 @@ const routes = [
         name: 'tests',
         path: '/tests',
         component: () => import('../screen/tests/index.vue')
+      },
+      {
+        name: 'take-test',
+        meta: {
+          roles: []
+        },
+        path: '/tests/:id',
+        component: () => import('../screen/tests/takeTest/index.vue')
       }
     ]
   }
