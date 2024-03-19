@@ -22,7 +22,7 @@ const route = useRoute()
 const testId = computed(() => route.params.id)
 
 onMounted(() => {
-  getTestById(testId)
+  getTestById(testId.value)
 })
 
 </script>
