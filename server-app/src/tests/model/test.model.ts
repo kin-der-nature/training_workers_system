@@ -1,4 +1,4 @@
-import { Questions } from './../questions/questions.model';
+import { Questions } from 'src/questions/questions.model';
 import {
   Model,
   Column,
@@ -6,7 +6,7 @@ import {
   Table,
   BelongsToMany,
 } from 'sequelize-typescript';
-import { TestQuentions } from './test-quentions.model';
+import { TestQuentions } from 'src/tests/model/test-quentions.model';
 import { getSumNumbers } from 'src/helpers/numbers';
 import { Questions_variant } from 'src/questions/variants.model';
 

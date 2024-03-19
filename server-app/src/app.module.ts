@@ -12,7 +12,7 @@ import { AuthModule } from './auth/auth.module';
 import { RolesGuards } from './roles/roles.guards';
 import { APP_GUARD } from '@nestjs/core';
 import { TestModule } from './tests/test.module';
-import { Test } from './tests/test.model';
+import { Test } from 'src/tests/model/test.model';
 import { TestQuentions } from './tests/test-quentions.model';
 import { QuestionsModule } from './questions/questions.module';
 import { Questions } from './questions/questions.model';
