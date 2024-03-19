@@ -10,6 +10,8 @@ export const useTakeTest = () => {
 
   const currentQuestionIndex = ref(0);
 
+  const selectedResponses = ref([]);
+
   const currentQuestion = computed(() => test.value?.questions[currentQuestionIndex.value])
 
   const getTestById = async (id) => {
@@ -23,6 +25,7 @@ export const useTakeTest = () => {
     test,
     currentQuestionIndex,
     currentQuestion,
+    selectedResponses,
     getTestById
   }
 }
