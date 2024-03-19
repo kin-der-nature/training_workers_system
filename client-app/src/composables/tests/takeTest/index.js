@@ -4,7 +4,7 @@ import { getTestByIdRequest } from "../../../api/test";
 
 export const useTakeTest = () => {
   const test = reactive({
-    loaging: false,
+    loading: false,
     value: null
   })
 
@@ -13,10 +13,10 @@ export const useTakeTest = () => {
   const currentQuestion = computed(() => test.value?.questions[currentQuestionIndex.value])
 
   const getTestById = async (id) => {
-    test.loaging = true;
+    test.loading = true;
     const { data } = await getTestByIdRequest(id)
     test.value = data;
-    test.loaging = false;
+    test.loading = false;
   }
 
   return {
