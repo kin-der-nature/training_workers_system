@@ -8,11 +8,22 @@ export const useTakeTest = () => {
     value: null
   })
 
+  const result = ref([]);
+
   const currentQuestionIndex = ref(0);
 
   const selectedResponses = ref([]);
 
   const currentQuestion = computed(() => test.value?.questions[currentQuestionIndex.value])
+
+
+  const setQuestionIndex = (v) => {
+    if (currentQuestionIndex.value >= test.questions.lenght) {
+      return
+    }
+
+    currentQuestionIndex.value = v;
+  }
 
   const getTestById = async (id) => {
     test.loading = true;
@@ -26,6 +37,8 @@ export const useTakeTest = () => {
     currentQuestionIndex,
     currentQuestion,
     selectedResponses,
+    result,
+    setQuestionIndex,
     getTestById
   }
 }
