@@ -1,4 +1,4 @@
-import { reactive } from 'vue';
+import { computed, ref, reactive } from 'vue';
 import { getTestByIdRequest } from "../../../api/test";
 
 
@@ -10,6 +10,8 @@ export const useTakeTest = () => {
 
   const currentQuestionIndex = ref(0);
 
+  const currentQuestion = computed(() => test.value?.questions[currentQuestionIndex.value])
+
   const getTestById = async (id) => {
     test.loaging = true;
     const { data } = await getTestByIdRequest(id)
@@ -20,6 +22,7 @@ export const useTakeTest = () => {
   return {
     test,
     currentQuestionIndex,
+    currentQuestion,
     getTestById
   }
 }
