@@ -21,7 +21,7 @@ import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useTests } from '../../composables/tests';
 import defaultCard from '../../components/card/index.vue';
-
+import { ElButton } from 'element-plus'
 const { tests, getTests } = useTests()
 
 const router = useRouter()
