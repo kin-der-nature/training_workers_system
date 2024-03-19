@@ -28,13 +28,18 @@ const routes = [
     component: () => import('../screen/courses/index.vue')
   },
   {
-    name: 'tests',
     path: '/tests',
     meta: {
       title: 'Тесты',
       roles: []
     },
-    component: () => import('../screen/tests/index.vue')
+    children: [
+      {
+        name: 'tests',
+        path: '/tests',
+        component: () => import('../screen/tests/index.vue')
+      }
+    ]
   }
 ]
 
