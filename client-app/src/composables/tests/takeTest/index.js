@@ -19,7 +19,8 @@ export const useTakeTest = () => {
   const allTestCount = computed(() => test.value?.questions.length)
 
   const setQuestionIndex = (v) => {
-    if (currentQuestionIndex.value >= test.questions.lenght) {
+
+    if (currentQuestionIndex.value >= allTestCount.value - 1 && currentQuestionIndex.value > 0) {
       return
     }
 
