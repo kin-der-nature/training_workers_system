@@ -16,6 +16,7 @@ export const useTakeTest = () => {
 
   const currentQuestion = computed(() => test.value?.questions[currentQuestionIndex.value])
 
+  const allTestCount = computed(() => test.value?.questions.length)
 
   const setQuestionIndex = (v) => {
     if (currentQuestionIndex.value >= test.questions.lenght) {
