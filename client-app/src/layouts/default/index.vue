@@ -47,9 +47,6 @@ import { ElMenu, ElMenuItem, ElScrollbar, ElCard } from 'element-plus'
   width: 100%;
   height: 100%;
 }
-.default_layout_card_content_container {
-  margin: 40px 0;
-}
 .default_layout_card_body {
   display: flex;
   flex-direction: column;
