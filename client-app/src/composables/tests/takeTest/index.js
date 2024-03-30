@@ -27,6 +27,11 @@ export const useTakeTest = () => {
     currentQuestionIndex.value = v;
   }
 
+
+  const setNextQuestionIndex = () => {
+    setQuestionIndex(currentQuestionIndex.value + 1)
+  }
+
   const getTestById = async (id) => {
     test.loading = true;
     const { data } = await getTestByIdRequest(id)
@@ -40,6 +45,7 @@ export const useTakeTest = () => {
     currentQuestion,
     selectedResponses,
     result,
+    setNextQuestionIndex,
     setQuestionIndex,
     getTestById
   }
