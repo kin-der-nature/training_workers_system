@@ -16,6 +16,10 @@
         :value="varinant.id"
       />
     </el-checkbox-group>
+
+    <el-button @click="setNextQuestion()" class="next_question_button">
+      Следуйщий вопрос
+    </el-button>
   </div>
 </template>
 
@@ -23,7 +27,7 @@
 import { computed, onMounted } from 'vue';
 import { useTakeTest } from '../../../composables/tests/takeTest';
 import { useRoute } from 'vue-router';
-import { ElCheckboxGroup, ElCheckbox } from 'element-plus';
+import { ElCheckboxGroup, ElButton, ElCheckbox } from 'element-plus';
 
 const { test, currentQuestion, selectedResponses, getTestById } = useTakeTest();
 
@@ -47,5 +51,9 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   margin: 10px 0;
+}
+
+.next_question_button {
+  margin: 20px 0;
 }
 </style>
