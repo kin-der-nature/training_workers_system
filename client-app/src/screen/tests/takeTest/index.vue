@@ -7,7 +7,7 @@
         </h1>
       </div>
     </div>
-    <el-checkbox-group v-model="selectedResponses" class="take_test_variants_container">
+    <el-checkbox-group v-model="selectedVariants" class="take_test_variants_container">
       <el-checkbox
         v-for="varinant in currentQuestion?.variants"
         :key="varinant.id"
@@ -29,7 +29,7 @@ import { useTakeTest } from '../../../composables/tests/takeTest';
 import { useRoute } from 'vue-router';
 import { ElCheckboxGroup, ElButton, ElCheckbox } from 'element-plus';
 
-const { test, currentQuestion, selectedResponses, getTestById } = useTakeTest();
+const { currentQuestion, selectedVariants, getTestById } = useTakeTest();
 
 const route = useRoute()
 

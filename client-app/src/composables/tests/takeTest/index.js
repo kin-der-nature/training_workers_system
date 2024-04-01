@@ -12,7 +12,7 @@ export const useTakeTest = () => {
 
   const currentQuestionIndex = ref(0);
 
-  const selectedResponses = ref([]);
+  const selectedVariants = ref([]);
 
   const currentQuestion = computed(() => test.value?.questions[currentQuestionIndex.value])
 
@@ -43,7 +43,7 @@ export const useTakeTest = () => {
     test,
     currentQuestionIndex,
     currentQuestion,
-    selectedResponses,
+    selectedVariants,
     result,
     setNextQuestionIndex,
     setQuestionIndex,
