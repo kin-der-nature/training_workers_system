@@ -55,6 +55,16 @@ export const useTakeTest = () => {
     selectedVariants.value = [];
   }
 
+  const setNextQuestion = () => {
+
+    if (currentResponseOfQuestion.value.responses.length < 1) {
+      return;
+    }
+
+    selectResponseOfQuestion(currentResponseOfQuestion.value);
+    setNextQuestionIndex();
+  }
+
   const getTestById = async (id) => {
     test.loading = true;
     const { data } = await getTestByIdRequest(id)
@@ -70,6 +80,7 @@ export const useTakeTest = () => {
     selectedVariants,
     result,
     selectResponseOfQuestion,
+    setNextQuestion,
     setResponseOfQuestion,
     setNextQuestionIndex,
     currentResponseOfQuestion,
