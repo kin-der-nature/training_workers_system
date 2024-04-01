@@ -18,6 +18,8 @@ export const useTakeTest = () => {
 
   const isSelectedVariants = computed(() => selectedVariants.value.length < 1);
 
+  const currentResponseOfQuestion = computed(() => ({ id: currentQuestion.value.id, responses: selectedVariants.value }))
+
   const allTestCount = computed(() => test.value?.questions.length)
 
   const setQuestionIndex = (v) => {
@@ -49,6 +51,7 @@ export const useTakeTest = () => {
     selectedVariants,
     result,
     setNextQuestionIndex,
+    currentResponseOfQuestion,
     setQuestionIndex,
     getTestById
   }
