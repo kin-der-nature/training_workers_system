@@ -17,7 +17,7 @@
       />
     </el-checkbox-group>
 
-    <el-button @click="setNextQuestion()" class="next_question_button">
+    <el-button :disabled="isSelectedVariants" @click="setNextQuestion()" class="next_question_button">
       Следуйщий вопрос
     </el-button>
   </div>
@@ -29,7 +29,7 @@ import { useTakeTest } from '../../../composables/tests/takeTest';
 import { useRoute } from 'vue-router';
 import { ElCheckboxGroup, ElButton, ElCheckbox } from 'element-plus';
 
-const { currentQuestion, selectedVariants, getTestById } = useTakeTest();
+const { currentQuestion, selectedVariants, isSelectedVariants, getTestById } = useTakeTest();
 
 const route = useRoute()
 
