@@ -29,7 +29,7 @@ import { useTakeTest } from '../../../composables/tests/takeTest';
 import { useRoute } from 'vue-router';
 import { ElCheckboxGroup, ElButton, ElCheckbox } from 'element-plus';
 
-const { currentQuestion, selectedVariants, setNextQuestion, isSelectedVariants, getTestById } = useTakeTest();
+const { currentQuestion, selectedVariants, isLastCurrentQuestion, setNextQuestion, isSelectedVariants, getTestById } = useTakeTest();
 
 const paramsButtonManagment = {
   nextQuestion: {
@@ -47,6 +47,8 @@ const paramsButtonManagment = {
     event: null
   }
 }
+
+const currentTypeManagmentButton = computed(() => isLastCurrentQuestion.value ? 'endTesting' : 'nextQuestion')
 
 const route = useRoute()
 
