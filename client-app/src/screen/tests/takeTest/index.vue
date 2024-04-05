@@ -50,6 +50,8 @@ const paramsButtonManagment = {
 
 const currentTypeManagmentButton = computed(() => isLastCurrentQuestion.value ? 'endTesting' : 'nextQuestion')
 
+const currentParamsManagmentButton = computed(() => paramsButtonManagment[currentTypeManagmentButton.value])
+
 const route = useRoute()
 
 const testId = computed(() => route.params.id)
