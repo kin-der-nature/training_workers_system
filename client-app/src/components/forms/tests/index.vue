@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <el-form>
 
-  </div>
+  </el-form>
 </template>
 
 <script setup>
+import { ElForm } from 'element-plus';
 
 </script>
 
