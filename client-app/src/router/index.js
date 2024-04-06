@@ -40,6 +40,11 @@ const routes = [
         component: () => import('../screen/tests/index.vue')
       },
       {
+        name: 'create',
+        path: '/tests/create',
+        component: () => import('../screen/tests/create/index.vue')
+      },
+      {
         name: 'take-test',
         meta: {
           roles: []
