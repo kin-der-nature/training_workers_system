@@ -19,5 +19,5 @@ export const createTestRequest = (dto) => {
     questions: questionsId
   }
 
-  return httpInctance.post('tests/create', params)
+  return httpInctance.post('tests/', params)
 }
