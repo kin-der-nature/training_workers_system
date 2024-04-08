@@ -1,6 +1,8 @@
 <template>
   <el-table>
     <el-table-column prop="name" label="Вопрос" />
+    <el-table-column label="Баллы">
+    </el-table-column>
   </el-table>
 </template>
 
