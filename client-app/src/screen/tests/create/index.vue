@@ -13,8 +13,13 @@
 import { reactive } from 'vue';
 import { ElForm, ElButton } from 'element-plus';
 import TestForm from '../../../components/forms/tests/index.vue'
+import { createTestRequest } from '../../../api/test';
 
 const test = reactive({})
+
+const createTest = (test) => {
+  createTestRequest(test);
+}
 
 </script>
 
