@@ -41,6 +41,9 @@ const routes = [
       },
       {
         name: 'create',
+        meta: {
+          title: 'Создать тест'
+        },
         path: '/tests/create',
         component: () => import('../screen/tests/create/index.vue')
       },
