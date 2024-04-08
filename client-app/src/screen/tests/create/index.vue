@@ -3,7 +3,7 @@
     <el-form class="test-form" size="large">
       <test-form v-model="test" />
     </el-form>
-    <el-button size="large" type="primary">
+    <el-button @click="createTest(test)" size="large" type="primary">
       Создать
     </el-button>
   </div>
