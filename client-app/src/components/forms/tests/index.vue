@@ -17,6 +17,10 @@ const model = defineModel()
 
 const { questions, getQuestions } = useQuestions();
 
+const setQuesitons = (v) => {
+  model.value.questions = v
+}
+
 onMounted(() => getQuestions())
 
 </script>
