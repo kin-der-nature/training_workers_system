@@ -1,6 +1,7 @@
 <template>
   <el-table>
     <el-table-column prop="name" label="Вариант" />
+    <el-table-column prop="counte" label="Баллы" />
   </el-table>
 </template>
 
