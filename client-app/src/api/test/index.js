@@ -13,6 +13,7 @@ export const getTestByIdRequest = (dto) => {
 }
 
 export const createTestRequest = (dto) => {
+  const questionsId = dto.questions.map((item) => item.id)
   const params = {
     name: dto.name,
     questions: dto.questions
