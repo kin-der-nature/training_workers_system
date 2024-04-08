@@ -11,3 +11,12 @@ export const getTestByIdRequest = (dto) => {
 
   return httpInctance.get('tests/one/', { params })
 }
+
+export const createTestRequest = (dto) => {
+  const params = {
+    name: dto.name,
+    questions: dto.questions
+  }
+
+  return httpInctance.post('tests/create', params)
+}
