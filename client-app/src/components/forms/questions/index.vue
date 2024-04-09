@@ -21,10 +21,12 @@ import VariantForm from '../variants/index.vue'
 import VariantTable from '../../table/variants/index.vue'
 import { ref } from 'vue';
 
-const variant = ref({
+const defaultVariantValue = {
   name: null,
   counte: 0
-})
+}
+
+const variant = ref({ ...defaultVariantValue })
 
 const variants = ref([])
 
