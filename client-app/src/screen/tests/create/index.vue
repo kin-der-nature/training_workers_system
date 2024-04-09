@@ -1,7 +1,9 @@
 <template>
   <div class="create_tests_screen">
     <el-form class="test-form" size="large">
-      <test-form v-model="test" />
+      <el-form-item>
+        <test-form v-model="test" />
+      </el-form-item>
     </el-form>
     <el-button @click="createTest(test)" size="large" type="primary">
       Создать
