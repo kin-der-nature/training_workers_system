@@ -28,6 +28,10 @@ const variant = reactive({
 
 const variants = ref([])
 
+const addVariant = () => {
+  variants.value.push({ ...variant })
+}
+
 </script>
 
 <style scoped>
