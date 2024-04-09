@@ -1,6 +1,6 @@
 <template>
   <el-form-item>
-    <el-input placeholder="Введите вопрос" />
+    <el-input v-model="result.name" placeholder="Введите вопрос" />
   </el-form-item>
   <el-form-item>
     <div class="variant_form__container">
