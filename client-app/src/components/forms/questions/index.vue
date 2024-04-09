@@ -34,6 +34,11 @@ const addVariant = () => {
   variants.value.push({ ...variant.value })
 }
 
+const resetVariantState = () => {
+  variant.value = { ...defaultVariantValue }
+}
+
+
 </script>
 
 <style scoped>
