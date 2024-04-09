@@ -5,7 +5,7 @@
   <el-form-item>
     <div class="variant_form__container">
       <variant-form v-model="variant" />
-      <el-button>
+      <el-button @click="addVariant()">
         Добавить вариант
       </el-button>
     </div>
