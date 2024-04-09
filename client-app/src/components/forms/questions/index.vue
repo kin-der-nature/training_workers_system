@@ -3,7 +3,9 @@
     <el-input placeholder="Введите вопрос" />
   </el-form-item>
   <el-form-item>
-    <variant-form v-model="variant" />
+    <div class="variant_form__container">
+      <variant-form v-model="variant" />
+    </div>
   </el-form-item>
 </template>
 
@@ -20,4 +22,9 @@ const variant = reactive({
 </script>
 
 <style scoped>
+.variant_form__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
 </style>
