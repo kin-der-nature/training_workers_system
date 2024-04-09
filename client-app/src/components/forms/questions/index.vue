@@ -32,6 +32,7 @@ const variants = ref([])
 
 const addVariant = () => {
   variants.value.push({ ...variant.value })
+  resetVariantState()
 }
 
 const resetVariantState = () => {
