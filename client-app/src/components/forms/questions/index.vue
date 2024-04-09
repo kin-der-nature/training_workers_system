@@ -24,7 +24,7 @@
 import { ElInput, ElButton, ElFormItem } from 'element-plus';
 import VariantForm from '../variants/index.vue'
 import VariantTable from '../../table/variants/index.vue'
-import { ref } from 'vue';
+import { reactive, ref } from 'vue';
 
 const defaultVariantValue = {
   name: null,
@@ -34,6 +34,11 @@ const defaultVariantValue = {
 const variant = ref({ ...defaultVariantValue })
 
 const variants = ref([])
+
+const result = reactive({
+  name: null,
+  variants,
+})
 
 const addVariant = () => {
   variants.value.push({ ...variant.value })
