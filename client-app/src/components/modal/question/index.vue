@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <el-dialog>
 
-  </div>
+  </el-dialog>
 </template>
 
 <script setup>
+import { ElDialog } from 'element-plus';
 
 </script>
 
