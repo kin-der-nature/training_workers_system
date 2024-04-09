@@ -13,11 +13,6 @@
   <el-form-item>
     <variant-table :data="variants" border />
   </el-form-item>
-  <el-form-item>
-    <el-button type="primary">
-      Сохранить
-    </el-button>
-  </el-form-item>
 </template>
 
 <script setup>
