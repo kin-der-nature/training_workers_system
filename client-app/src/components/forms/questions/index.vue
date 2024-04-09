@@ -19,12 +19,14 @@
 import { ElInput, ElButton, ElFormItem } from 'element-plus';
 import VariantForm from '../variants/index.vue'
 import VariantTable from '../../table/variants/index.vue'
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
 
 const variant = reactive({
   variant: null,
   score: 0
 })
+
+const variants = ref([])
 
 </script>
 
