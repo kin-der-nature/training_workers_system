@@ -22,7 +22,7 @@ import VariantTable from '../../table/variants/index.vue'
 import { ref } from 'vue';
 
 const variant = ref({
-  variant: null,
+  name: null,
   counte: 0
 })
 
