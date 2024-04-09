@@ -4,6 +4,11 @@
       <el-form-item>
         <test-form v-model="test" />
       </el-form-item>
+      <el-form-item>
+        <el-button class="create_test_button">
+          Создать вопрос
+        </el-button>
+      </el-form-item>
     </el-form>
     <el-button @click="createTest(test)" size="large" type="primary">
       Создать
@@ -26,5 +31,7 @@ const createTest = (test) => {
 </script>
 
 <style scoped>
-
+.create_test_button {
+  width: 100%;
+}
 </style>
