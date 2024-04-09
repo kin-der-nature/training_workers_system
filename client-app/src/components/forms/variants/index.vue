@@ -1,6 +1,6 @@
 <template>
   <el-form-item>
-    <el-input placeholder="Введите вариант" />
+    <el-input v-model="model.variant" placeholder="Введите вариант" />
   </el-form-item>
   <el-form-item>
     <el-input-number :min="0" />
