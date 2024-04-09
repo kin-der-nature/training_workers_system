@@ -35,6 +35,8 @@ const result = reactive({
   variants,
 })
 
+const model = defineModel();
+
 const addVariant = () => {
   variants.value.push({ ...variant.value })
   resetVariantState()
