@@ -10,6 +10,8 @@
 <script setup>
 import { ElFormItem, ElInput, ElInputNumber } from 'element-plus';
 
+const model = defineModel();
+
 </script>
 
 <style scoped>
