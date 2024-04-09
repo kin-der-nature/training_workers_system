@@ -11,7 +11,7 @@
     </div>
   </el-form-item>
   <el-form-item>
-    <variant-table border />
+    <variant-table :data="variants" border />
   </el-form-item>
 </template>
 
@@ -23,7 +23,7 @@ import { reactive, ref } from 'vue';
 
 const variant = reactive({
   variant: null,
-  score: 0
+  counte: 0
 })
 
 const variants = ref([])
