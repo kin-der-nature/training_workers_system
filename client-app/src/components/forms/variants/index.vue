@@ -3,7 +3,7 @@
     <el-input v-model="model.variant" placeholder="Введите вариант" />
   </el-form-item>
   <el-form-item>
-    <el-input-number v-model="model.score" :min="0" />
+    <el-input-number v-model="model.counte" :min="0" />
   </el-form-item>
 </template>
 
