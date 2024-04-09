@@ -5,6 +5,9 @@
   <el-form-item>
     <div class="variant_form__container">
       <variant-form v-model="variant" />
+      <el-button>
+        Добавить вариант
+      </el-button>
     </div>
   </el-form-item>
   <el-form-item>
@@ -13,7 +16,7 @@
 </template>
 
 <script setup>
-import { ElInput, ElFormItem } from 'element-plus';
+import { ElInput, ElButton, ElFormItem } from 'element-plus';
 import VariantForm from '../variants/index.vue'
 import VariantTable from '../../table/variants/index.vue'
 import { reactive } from 'vue';
