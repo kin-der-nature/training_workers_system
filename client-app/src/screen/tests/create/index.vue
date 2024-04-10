@@ -1,9 +1,7 @@
 <template>
   <div class="create_tests_screen">
     <el-form class="test-form" size="large">
-      <el-form-item>
         <test-form v-model="test" />
-      </el-form-item>
       <el-form-item>
         <el-button class="create_test_button">
           Создать вопрос
@@ -18,7 +16,7 @@
 
 <script setup>
 import { reactive } from 'vue';
-import { ElForm, ElButton } from 'element-plus';
+import { ElForm, ElFormItem, ElButton } from 'element-plus';
 import TestForm from '../../../components/forms/tests/index.vue'
 import { createTestRequest } from '../../../api/test';
 
