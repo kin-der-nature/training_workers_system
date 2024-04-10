@@ -1,6 +1,6 @@
 <template>
   <div class="create_tests_screen">
-    <question-modal />
+    <question-modal v-model="isQuestionModal" />
     <el-form class="test-form" size="large">
         <test-form v-model="test" />
       <el-form-item>
