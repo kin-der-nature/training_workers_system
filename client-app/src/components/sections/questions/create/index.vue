@@ -17,6 +17,10 @@ import { createQuestionRequest } from '@/api/question';
 
 const emits = defineEmits(['created'])
 
+const callingOfCreatingEvent = (v) => {
+  emits('created', v)
+}
+
 const question = reactive({
   name: null,
   variants: []
