@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
 import { ElForm, ElFormItem, ElButton } from 'element-plus';
 import TestForm from '../../../components/forms/tests/index.vue'
 import { createTestRequest } from '../../../api/test';
@@ -24,6 +24,8 @@ const test = reactive({
   name: null,
   questions: []
 })
+
+const isQuestionModal = ref(false);
 
 const createTest = (test) => {
   createTestRequest(test);
