@@ -13,7 +13,7 @@ export class Questions extends Model<Questions, createQuestion> {
   id: number;
 
   @Column({
-    type: DataType.STRING(50),
+    type: DataType.STRING,
     allowNull: false,
   })
   name: string;
