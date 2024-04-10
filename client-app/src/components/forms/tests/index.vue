@@ -3,7 +3,7 @@
       <el-input v-model="model.name" placeholder="Введите название" />
     </el-form-item>
     <el-form-item>
-      <questions-table :data="questions.value" @selection-change="setQuesitons" class="test-table" />
+      <questions-table :data="model.questions" @selection-change="setQuesitons" class="test-table" />
     </el-form-item>
 </template>
 
