@@ -1,5 +1,5 @@
 <template>
-  <el-dialog v-model="model">
+  <el-dialog title="Создание вопроса" v-model="model">
     <question-section />
   </el-dialog>
 </template>
