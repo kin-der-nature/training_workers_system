@@ -13,11 +13,16 @@
 import { ElFormItem, ElButton } from 'element-plus';
 import questionForm from '@/components/forms/questions/index.vue'
 import { reactive } from 'vue';
+import { createQuestionRequest } from '@/api/question';
 
 const question = reactive({
   name: null,
   variants: []
 })
+
+const createQuestion = () => {
+  createQuestionRequest({ ...question })
+}
 
 </script>
 
