@@ -26,8 +26,8 @@ const question = reactive({
   variants: []
 })
 
-const createQuestion = () => {
-  const { data } = createQuestionRequest({ ...question })
+const createQuestion = async () => {
+  const { data } = await createQuestionRequest({ ...question })
 }
 
 </script>
