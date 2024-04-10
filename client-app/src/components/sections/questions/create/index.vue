@@ -15,6 +15,8 @@ import questionForm from '@/components/forms/questions/index.vue'
 import { reactive } from 'vue';
 import { createQuestionRequest } from '@/api/question';
 
+const emits = defineEmits(['created'])
+
 const question = reactive({
   name: null,
   variants: []
