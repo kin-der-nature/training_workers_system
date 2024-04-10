@@ -28,6 +28,7 @@ const question = reactive({
 
 const createQuestion = async () => {
   const { data } = await createQuestionRequest({ ...question })
+  callingOfCreatingEvent(data);
 }
 
 </script>
