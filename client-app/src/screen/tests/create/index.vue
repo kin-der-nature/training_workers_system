@@ -4,7 +4,7 @@
     <el-form class="test-form" size="large">
         <test-form v-model="test" />
       <el-form-item>
-        <el-button class="create_question_button">
+        <el-button @click="setQuestionModalValue(true)" class="create_question_button">
           Создать вопрос
         </el-button>
       </el-form-item>
@@ -28,6 +28,10 @@ const test = reactive({
 })
 
 const isQuestionModal = ref(false);
+
+const setQuestionModalValue = (v) => {
+  isQuestionModal.value = v;
+}
 
 const createTest = (test) => {
   createTestRequest(test);
