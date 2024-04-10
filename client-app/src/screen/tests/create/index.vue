@@ -1,5 +1,6 @@
 <template>
   <div class="create_tests_screen">
+    <question-modal />
     <el-form class="test-form" size="large">
         <test-form v-model="test" />
       <el-form-item>
@@ -19,6 +20,7 @@ import { reactive, ref } from 'vue';
 import { ElForm, ElFormItem, ElButton } from 'element-plus';
 import TestForm from '../../../components/forms/tests/index.vue'
 import { createTestRequest } from '../../../api/test';
+import QuestionModal from '@/components/modal/question/index.vue'
 
 const test = reactive({
   name: null,
