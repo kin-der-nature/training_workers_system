@@ -16,6 +16,11 @@ const callingEventCreatedOneQuestion = (v) => {
   emits('createdOneQuestion', v)
 }
 
+const handlerCreateOneQuestion = (question) => {
+  setModelValue(false);
+  callingEventCreatedOneQuestion(question)
+}
+
 const setModelValue = (v) => {
   model.value = v;
 }
