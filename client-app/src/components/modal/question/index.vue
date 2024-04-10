@@ -10,6 +10,11 @@ import QuestionSection from '@/components/sections/questions/create/index.vue'
 
 const model = defineModel()
 
+const setModelValue = (v) => {
+  model.value = v;
+}
+
+
 </script>
 
 <style scoped>
