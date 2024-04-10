@@ -27,7 +27,7 @@ const question = reactive({
 })
 
 const createQuestion = () => {
-  createQuestionRequest({ ...question })
+  const { data } = createQuestionRequest({ ...question })
 }
 
 </script>
