@@ -10,6 +10,8 @@ import QuestionSection from '@/components/sections/questions/create/index.vue'
 
 const model = defineModel()
 
+const emits = defineEmits(['createdOneQuestion'])
+
 const setModelValue = (v) => {
   model.value = v;
 }
