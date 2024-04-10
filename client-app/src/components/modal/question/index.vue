@@ -12,6 +12,10 @@ const model = defineModel()
 
 const emits = defineEmits(['createdOneQuestion'])
 
+const callingEventCreatedOneQuestion = (v) => {
+  emits('createdOneQuestion', v)
+}
+
 const setModelValue = (v) => {
   model.value = v;
 }
