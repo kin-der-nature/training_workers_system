@@ -8,20 +8,15 @@
 </template>
 
 <script setup>
-import { defineModel, onMounted } from 'vue';
+import { defineModel } from 'vue';
 import { ElInput, ElFormItem } from 'element-plus';
 import QuestionsTable from '../../table/questions/index.vue';
-import { useQuestions } from '../../../composables/questions/index.js';
 
 const model = defineModel()
-
-const { questions, getQuestions } = useQuestions();
 
 const setQuesitons = (v) => {
   model.value.questions = v
 }
-
-onMounted(() => getQuestions())
 
 </script>
 
