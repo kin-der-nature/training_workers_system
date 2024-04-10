@@ -3,7 +3,7 @@
     <el-form class="test-form" size="large">
         <test-form v-model="test" />
       <el-form-item>
-        <el-button class="create_test_button">
+        <el-button class="create_question_button">
           Создать вопрос
         </el-button>
       </el-form-item>
@@ -32,7 +32,7 @@ const createTest = (test) => {
 </script>
 
 <style scoped>
-.create_test_button {
+.create_question_button {
   width: 100%;
 }
 </style>
