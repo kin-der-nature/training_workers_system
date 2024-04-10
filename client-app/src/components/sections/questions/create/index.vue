@@ -2,7 +2,7 @@
   <div>
     <question-form v-model="question" />
     <el-form-item>
-      <el-button type="primary">
+      <el-button @click="createQuestion()" type="primary">
         Создать
       </el-button>
     </el-form-item>
