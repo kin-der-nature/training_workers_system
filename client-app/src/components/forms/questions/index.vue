@@ -19,7 +19,7 @@
 import { ElInput, ElButton, ElFormItem } from 'element-plus';
 import VariantForm from '../variants/index.vue'
 import VariantTable from '../../table/variants/index.vue'
-import { reactive, ref } from 'vue';
+import { ref } from 'vue';
 
 const defaultVariantValue = {
   name: null,
