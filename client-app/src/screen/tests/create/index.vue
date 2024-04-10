@@ -16,13 +16,13 @@
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue';
+import { ref } from 'vue';
 import { ElForm, ElFormItem, ElButton } from 'element-plus';
 import TestForm from '../../../components/forms/tests/index.vue'
 import { createTestRequest } from '../../../api/test';
 import QuestionModal from '@/components/modal/question/index.vue'
 
-const test = reactive({
+const test = ref({
   name: null,
   questions: []
 })
