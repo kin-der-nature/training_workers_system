@@ -17,8 +17,8 @@
       />
     </el-checkbox-group>
 
-    <el-button :disabled="isSelectedVariants" @click="setNextQuestion()" class="next_question_button">
-      Следуйщий вопрос
+    <el-button :disabled="isSelectedVariants" v-on="currentParamsManagmentButton.event" class="next_question_button">
+      {{ currentParamsManagmentButton.props.name }}
     </el-button>
   </div>
 </template>
