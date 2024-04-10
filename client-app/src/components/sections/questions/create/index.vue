@@ -1,6 +1,6 @@
 <template>
   <div>
-    <question-form />
+    <question-form v-model="question" />
   </div>
 </template>
 
