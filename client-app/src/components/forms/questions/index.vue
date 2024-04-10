@@ -31,7 +31,7 @@ const variant = ref({ ...defaultVariantValue })
 const model = defineModel();
 
 const addVariant = () => {
-  model.variants.value.push({ ...variant.value })
+  model.value.variants.push({ ...variant.value })
   resetVariantState()
 }
 
