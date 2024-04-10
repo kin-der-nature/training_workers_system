@@ -8,6 +8,8 @@
 import { ElDialog } from 'element-plus';
 import QuestionSection from '@/components/sections/questions/create/index.vue'
 
+const model = defineModel()
+
 </script>
 
 <style scoped>
