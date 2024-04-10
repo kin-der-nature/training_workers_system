@@ -30,11 +30,6 @@ const variant = ref({ ...defaultVariantValue })
 
 const variants = ref([])
 
-const result = reactive({
-  name: null,
-  variants,
-})
-
 const model = defineModel();
 
 const addVariant = () => {
