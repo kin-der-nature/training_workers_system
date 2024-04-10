@@ -10,10 +10,10 @@ import QuestionSection from '@/components/sections/questions/create/index.vue'
 
 const model = defineModel()
 
-const emits = defineEmits(['createdOneQuestion'])
+const emits = defineEmits(['created'])
 
 const callingEventCreatedOneQuestion = (v) => {
-  emits('createdOneQuestion', v)
+  emits('created', v)
 }
 
 const handlerCreateOneQuestion = (question) => {
