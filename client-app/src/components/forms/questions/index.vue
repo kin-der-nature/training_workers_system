@@ -11,7 +11,7 @@
     </div>
   </el-form-item>
   <el-form-item>
-    <variant-table :data="variants" border />
+    <variant-table :data="model.variants" border />
   </el-form-item>
 </template>
 
@@ -28,12 +28,10 @@ const defaultVariantValue = {
 
 const variant = ref({ ...defaultVariantValue })
 
-const variants = ref([])
-
 const model = defineModel();
 
 const addVariant = () => {
-  variants.value.push({ ...variant.value })
+  model.variants.value.push({ ...variant.value })
   resetVariantState()
 }
 
